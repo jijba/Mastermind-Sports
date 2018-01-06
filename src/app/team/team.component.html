@@ -1,0 +1,27 @@
+<div style="text-align:center">
+  <h1 *ngIf="data!=null">
+    TEAM
+  </h1>
+ </div>
+<a routerLink="/competition" class="btn btn-success">Go for new Competition!</a>
+<br>
+<br>
+<div *ngIf="data!=null">
+<table class="table table-bordered">
+  <tr >
+    <th>Name</th>
+    <th>Jersey No.</th>
+    <th>Position</th>
+    <th>Nationality</th>
+    <th>Date of Birth</th>
+  </tr>
+  <tr *ngFor="let player of data.players"  >
+    <td>{{ player.name }}</td>
+    <td>{{ player.jerseyNumber }}</td>
+    <td>{{ player.position }}</td>
+    <td>{{ player.nationality }}</td>
+    <td>{{player.dateOfBirth}}</td>
+  </tr>
+
+ </table>
+</div>

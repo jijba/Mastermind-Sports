@@ -1,0 +1,23 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to Mastermind Sports!
+  </h1>
+ </div>
+<h2>Here are some competitons to help you start: </h2>
+
+<br>
+<br>
+<div *ngIf="data!=null">
+<table class="table table-bordered">
+  <tr>
+    <th>CAPTION</th>
+    <th>LEAGUE</th>
+  </tr>
+  <tr *ngFor="let competition of data" >
+    <td><a [routerLink]="['/standing', competition.id]" >{{ competition.caption }}</a></td>
+    <td>{{ competition.league }}</td>
+    
+  </tr>
+ </table>
+</div>
+

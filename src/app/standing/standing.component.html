@@ -1,0 +1,38 @@
+<div style="text-align:center">
+  <h1 *ngIf="data!=null">
+    {{data.leagueCaption}}
+  </h1>
+ </div>
+ <a routerLink="/competition" class="btn btn-success">Go Back!</a>
+<br>
+<br>
+<div *ngIf="data!=null" style="text-align:center">
+<table class="table table-bordered">
+  <tr >
+    <th>Position</th>
+    <th>Club</th>
+    <th>Played</th>
+    <th>Won</th>
+    <th>Drawn</th>
+    <th>Lost</th>
+    <th>GF</th>
+    <th>GA</th>
+    <th>GD</th>
+    <th>Points</th>
+  </tr>
+  <tr *ngFor="let team of data.standing"  >
+    <td>{{ team.position }}</td>
+    <td><a [routerLink]="['/team', 66]" >{{ team.teamName }}</a></td><!--I had to hard code 66 as team id as there was not team id field in standing object of league table-->
+    <td>{{ team.playedGames }}</td>
+    <td>{{ team.wins }}</td>
+    <td>{{ team.draws }}</td>
+    <td>{{ team.losses }}</td>
+    <td>{{ team.goalsAgainst }}</td>
+    <td>{{ team.goalsAgainst }}</td>
+    <td>{{ team.goalDifference }}</td>
+    <td>{{ team.points }}</td>
+  </tr>
+
+ </table>
+</div>
+
